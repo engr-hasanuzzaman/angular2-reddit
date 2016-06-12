@@ -1,5 +1,5 @@
 node_modules
-app.js
-app.js.map
+app/app.js
+app/app.js.map
 npm-debug.log
 .idea
