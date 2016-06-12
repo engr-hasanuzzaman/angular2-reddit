@@ -1,18 +1,21 @@
 <!doctype html>
 <html>
 <head>
-    <title>First App - Hello world</title>
+    <title>My Reddit clone</title>
     <!-- Libraries -->
     <script src="node_modules/es6-shim/es6-shim.js"></script>
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
     <!-- Stylesheet -->
     <link rel="stylesheet" type="text/css" href="resources/vendor/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+
+<!-- Configure System.js, our module loader -->
 <script>
     System.config({
         packages: {
@@ -25,6 +28,25 @@
     System.import('app.js')
             .then(null, console.error.bind(console));
 </script>
-<my-reddit></my-reddit>
+
+<!-- Menu Bar -->
+<div class="ui menu">
+    <div class="ui container">
+        <a href="#" class="header item">
+            <img class="logo" src="resources/images/reddit.png">
+            My Reddit
+        </a>
+        <div class="header item borderless">
+            <h1 class="ui header">
+                My simple Reddit with angular 2
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="ui main text container">
+    <reddit></reddit> <!-- <--- Our app loads here! -->
+</div>
+
 </body>
 </html>
