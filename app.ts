@@ -79,11 +79,15 @@ class Article {
 <h3 class="ui header">Add a Link</h3>
 <div class="field">
 <label for="title">Title:</label>
-<input name="title">
+<input name="title" #title>
 </div>
 <div class="field">
 <label for="link">Link:</label>
-<input name="link">
+<input name="link" #link>
+<button (click)="addArticle(title, link)"
+class="ui positive right floated button">
+Submit link
+</button>
 </div>
 </form>
     <!-- start adding here -->
@@ -109,6 +113,12 @@ class Reddit {
             new Article('Twitter', 'https://www.twitter.com/', 15 ),
             new Article('Stack Overflow', 'https://www.stackoverflow.com/', 20 ),
             ]
+    }
+
+    addArticle(title: HTMLInputElement, link: HTMLInputElement): void{
+        this.articles.push(new Article(title.value, link.value, 0));
+        title.value = '';
+        link.value = '';
     }
 }
 
