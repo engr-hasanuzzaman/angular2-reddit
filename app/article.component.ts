@@ -3,6 +3,7 @@ import {Article} from "./article";
 // decoretor
 @Component({
     selector: 'article',
+    // assign ArticleComponent's article property form view
     inputs: ['article'],
     host:{
         class: 'row'
