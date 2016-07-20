@@ -2,6 +2,7 @@
 /// <reference path="../node_modules/angular2/typings/browser.d.ts"/>
 import { bootstrap } from "angular2/platform/browser";
 import { Component } from "angular2/core";
+import { FORM_DIRECTIVES } from "angular2/common";
 import { Article } from "./article";
 import { ArticleComponent } from "./article.component";
 //import { ArticleComponent };
@@ -11,7 +12,7 @@ import { ArticleComponent } from "./article.component";
 // decoretor
 @Component({
     selector: 'reddit',
-    directives: [ArticleComponent],
+    directives: [ArticleComponent, FORM_DIRECTIVES],
     templateUrl: 'app/templates/reddit.component.html'
 })
 
@@ -29,11 +30,12 @@ class Reddit {
             ]
     }
 
-    addArticle(title: HTMLInputElement, link: HTMLInputElement, comment: HTMLInputElement): void{
-        this.articles.push(new Article(title.value, link.value, comment.value, 0));
-        title.value = '';
-        link.value = '';
-        comment.value = '';
+    addArticle(article: any): void{
+        console.log(`------------------ angular for has been submitted ----------${article}`);
+        // this.articles.push(new Article(title.value, link.value, comment.value, 0));
+        // title.value = '';
+        // link.value = '';
+        // comment.value = '';
     }
 }
 

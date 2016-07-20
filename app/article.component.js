@@ -33,6 +33,7 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 ArticleComponent = __decorate([
                     core_1.Component({
                         selector: 'article',
+                        // assign ArticleComponent's article property form view
                         inputs: ['article'],
                         host: {
                             class: 'row'
